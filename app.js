@@ -5,12 +5,12 @@ $(document).ready(function(){
 
 //---------------------------------- LOGIC -----------------------------------//
 
-    $('#colors').append(
-        '<div id="red"></div>' +
-        '<div id="green"></div>' +
-        '<div id="yellow"></div>' +
-        '<div id="blue"></div>'
-    );
+    // $('#blockContainer').append(
+    //     '<div class="colorBlock" id="red"></div>' +
+    //     '<div class="colorBlock" id="green"></div>' +
+    //     '<div class="colorBlock" id="yellow"></div>' +
+    //     '<div class="colorBlock" id="blue"></div>'
+    // );
 
 //-------------------------------- FUNCTIONS ---------------------------------//
 

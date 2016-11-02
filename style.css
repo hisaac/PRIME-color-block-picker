@@ -1,3 +1,21 @@
+body {
+  font-family: sans-serif;
+}
+
+.colorBlock {
+  height: 200px;
+  width: 200px;
+}
+
+#messaging {
+  text-align: center;
+}
+
+#blockContainer {
+  width: 80%;
+  display: flex;
+}
+
 #red {
   background: red;
 }
