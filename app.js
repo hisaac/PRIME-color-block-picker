@@ -16,15 +16,13 @@ $(document).ready(function(){
     // selected color's hex value is displayed
     $('#start').on('click', function(){
         $('button').remove();
-        var randomIndex = randomArrayIndex(blocksArray.length);
-        randomColor = blocksArray[randomIndex];
+        randomColor = blocksArray[randomArrayIndex(blocksArray.length)];
         $('#colorToFind').html('<h2>Click the hex color #' + randomColor +
             '</h2>');
     });
 
-    //
+    // compares random color to the color selected by the user
     $('#blockContainer').on('click', '.colorBlock', function(){
-        // appendResult(compareRandClicked(randomColor, this.id));
         if (compareRandClicked(randomColor, this.id)) {
             $(this).append('<p class="result">Correct</p>').hide().fadeIn();
         } else {
