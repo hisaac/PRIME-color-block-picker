@@ -2,14 +2,28 @@ body {
   font-family: sans-serif;
 }
 
+hr {
+  width: 90%;
+  margin: 20px auto;
+}
+
 .colorBlock {
   height: 200px;
   width: 200px;
   margin: 1%;
+  border: 1px solid black;
 }
 
 .colorBlock:hover {
   cursor: pointer;
+}
+
+.correct {
+  background: green;
+}
+
+.incorrect {
+  background: red;
 }
 
 #messaging {
@@ -22,20 +36,4 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-#red {
-  background: red;
-}
-
-#green {
-  background: green;
-}
-
-#yellow {
-  background: yellow;
-}
-
-#blue {
-  background: blue;
 }
