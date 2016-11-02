@@ -3,9 +3,9 @@ body {
 }
 
 .colorBlock {
-  display: inline-block;
   height: 200px;
   width: 200px;
+  margin: 1%;
 }
 
 .colorBlock:hover {
@@ -19,7 +19,9 @@ body {
 #blockContainer {
   width: 80%;
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #red {
