@@ -24,7 +24,7 @@ $(document).ready(function(){
 
     //
     $('#blockContainer').on('click', '.colorBlock', function(){
-        appendResult(compareRandClicked(randomColor, this.id));
+        // appendResult(compareRandClicked(randomColor, this.id));
         if (compareRandClicked(randomColor, this.id)) {
             $(this).append('<p class="result">Correct</p>').hide().fadeIn();
         } else {
