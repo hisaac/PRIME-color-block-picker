@@ -2,45 +2,59 @@ $(document).ready(function(){
 //----------------------------- GLOBAL VARIABLES -----------------------------//
 
     var randomColor = null;
+    var blocksArray = [];
 
 //---------------------------------- LOGIC -----------------------------------//
 
-    // append color divs to the DOM
-    $('#blockContainer').append(
-        '<div class="colorBlock" id="red"></div>\n' +
-        '<div class="colorBlock" id="green"></div>\n' +
-        '<div class="colorBlock" id="yellow"></div>\n' +
-        '<div class="colorBlock" id="blue"></div>\n'
-    );
+    // when generate button is pressed, generate a div with a random hex color,
+    // and append to the dom
+    $('#generate').on('click', function(){
+        $('#blockContainer').append(randomColorDivGen());
+    });
 
-    // calls multiple functions
-    $('.colorBlock').click(function(){
-        appendResult(compareRandClicked(numberToColor(randomNumber(1, 4)), this));
+    // when start button is pressed, buttons are removed and the randomly
+    // selected color's hex value is displayed
+    $('#start').on('click', function(){
+        $('button').remove();
+        var randomIndex = randomArrayIndex(blocksArray.length);
+        randomColor = blocksArray[randomIndex];
+        $('#colorToFind').html('<h2>Click the hex color #' + randomColor +
+            '</h2>');
+    });
+
+    //
+    $('#blockContainer').on('click', '.colorBlock', function(){
+        appendResult(compareRandClicked(randomColor, this.id));
+        if (compareRandClicked(randomColor, this.id)) {
+            // $(this).addClass('correct');
+            // $(this).css({border: '10px solid green'});
+            $(this).append('<p>Correct</p>');
+        } else {
+            // $(this).addClass('incorrect');
+            // $(this).css({border: '10px solid red'});
+            $(this).append('<p>Incorrect</p>');
+        }
     });
 
 //-------------------------------- FUNCTIONS ---------------------------------//
 
-    // random number generator
+    // random number generator template (currently unused)
     function randomNumber(min, max){
         return Math.floor(Math.random() * (1 + max - min) + min);
     }
 
-    // converts number to specific div element
-    function numberToColor(number){
-        switch (number) {
-            case 1:
-                return red;
-                break;
-            case 2:
-                return green;
-                break;
-            case 3:
-                return yellow;
-                break;
-            case 4:
-                return blue;
-                break;
-        }
+    // random number generator with 0 as minimum
+    function randomArrayIndex(arrayLength){
+        return Math.floor(Math.random() * (arrayLength + 1));
+    }
+
+    function randomColorDivGen(){
+        var randomHex = Math.floor(Math.random()*16777215).toString(16);
+        var coloredDiv = '<div class="colorBlock" id="' + randomHex +
+            '" style=\"background: #' + randomHex + '\"></div>\n';
+
+        blocksArray.push(randomHex);
+        return coloredDiv;
     }
 
     // compares randomly selected color to clicked color
@@ -55,9 +69,16 @@ $(document).ready(function(){
     // appends correct or incorrect to the DOM
     function appendResult (boolean) {
         if (boolean) {
-            $('body').append('<h2>Correct! :)</h2>');
+            $('#result').hide().html('<h2>Correct! :)</h2>').fadeIn();
         } else {
-            $('body').append('<h2>Incorrect! :(</h2>');
+            $('#result').hide().html('<h2>Incorrect! :(</h2>').fadeIn();
+        }
+    }
+
+    // adds a new block with a random color to the DOM
+    function addRandomBlock (timesToRun) {
+        for (var i = 0; i < timesToRun; i++){
+            blocksArray.push(randomColorDivGen());
         }
     }
 

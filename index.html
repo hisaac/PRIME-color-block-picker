@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Color Block Picker</title>
+    <title>Hex Value Picker</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
@@ -11,12 +11,13 @@
     <div id="messaging">
       <h1>Color Picker</h1>
       <p>A random block has been selected. Click on the color blocks below until you've found the correct one!</p>
+      <button id="generate">Generate New Block</button>
+      <button id="start">Start Game</button>
+      <div id="colorToFind"></div>
+      <div id="result"></div>
+      <hr />
     </div>
     <div id="blockContainer">
-      <div class="colorBlock" id="red"></div>
-      <div class="colorBlock" id="green"></div>
-      <div class="colorBlock" id="yellow"></div>
-      <div class="colorBlock" id="blue"></div>
     </div>
   </body>
 </html>
