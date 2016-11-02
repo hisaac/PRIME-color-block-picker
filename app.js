@@ -18,24 +18,27 @@ $(document).ready(function(){
         $('button').remove();
         var randomIndex = randomArrayIndex(blocksArray.length);
         randomColor = blocksArray[randomIndex];
-        $('#colorToFind').html('<h2>Click the hex color #' + randomColor + '</h2>');
+        $('#colorToFind').html('<h2>Click the hex color #' + randomColor +
+            '</h2>');
     });
 
     //
     $('#blockContainer').on('click', '.colorBlock', function(){
         appendResult(compareRandClicked(randomColor, this.id));
         if (compareRandClicked(randomColor, this.id)) {
-            $(this).addClass('correct');
-            console.log(this);
+            // $(this).addClass('correct');
+            // $(this).css({border: '10px solid green'});
+            $(this).append('<p>Correct</p>');
         } else {
-            $(this).addClass('incorrect');
-            console.log(this);
+            // $(this).addClass('incorrect');
+            // $(this).css({border: '10px solid red'});
+            $(this).append('<p>Incorrect</p>');
         }
     });
 
 //-------------------------------- FUNCTIONS ---------------------------------//
 
-    // random number generator
+    // random number generator template (currently unused)
     function randomNumber(min, max){
         return Math.floor(Math.random() * (1 + max - min) + min);
     }
@@ -47,7 +50,9 @@ $(document).ready(function(){
 
     function randomColorDivGen(){
         var randomHex = Math.floor(Math.random()*16777215).toString(16);
-        var coloredDiv = '<div class="colorBlock" id="' + randomHex + '" style=\"background: #' + randomHex + '\"></div>\n';
+        var coloredDiv = '<div class="colorBlock" id="' + randomHex +
+            '" style=\"background: #' + randomHex + '\"></div>\n';
+
         blocksArray.push(randomHex);
         return coloredDiv;
     }
