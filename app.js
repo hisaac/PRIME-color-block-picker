@@ -5,12 +5,12 @@ $(document).ready(function(){
 
 //---------------------------------- LOGIC -----------------------------------//
 
-    // append color divs to the DOM
+    append color divs to the DOM
     $('#blockContainer').append(
-        '<div class="colorBlock" id="red"></div>' +
-        '<div class="colorBlock" id="green"></div>' +
-        '<div class="colorBlock" id="yellow"></div>' +
-        '<div class="colorBlock" id="blue"></div>'
+        '<div class="colorBlock" id="red"></div>\n' +
+        '<div class="colorBlock" id="green"></div>\n' +
+        '<div class="colorBlock" id="yellow"></div>\n' +
+        '<div class="colorBlock" id="blue"></div>\n'
     );
 
     // calls multiple functions
