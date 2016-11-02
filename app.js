@@ -26,13 +26,9 @@ $(document).ready(function(){
     $('#blockContainer').on('click', '.colorBlock', function(){
         appendResult(compareRandClicked(randomColor, this.id));
         if (compareRandClicked(randomColor, this.id)) {
-            // $(this).addClass('correct');
-            // $(this).css({border: '10px solid green'});
-            $(this).append('<p>Correct</p>');
+            $(this).append('<p class="result">Correct</p>').hide().fadeIn();
         } else {
-            // $(this).addClass('incorrect');
-            // $(this).css({border: '10px solid red'});
-            $(this).append('<p>Incorrect</p>');
+            $(this).append('<p class="result">Incorrect</p>').hide().fadeIn();
         }
     });
 
@@ -45,11 +41,15 @@ $(document).ready(function(){
 
     // random number generator with 0 as minimum
     function randomArrayIndex(arrayLength){
-        return Math.floor(Math.random() * (arrayLength + 1));
+        return Math.floor(Math.random() * (1 + arrayLength - 0) + 0);
     }
 
     function randomColorDivGen(){
-        var randomHex = Math.floor(Math.random()*16777215).toString(16);
+        var randomHex = "";
+        while (randomHex.length != 6){
+            randomHex = Math.floor(Math.random()*16777215).toString(16);
+        }
+
         var coloredDiv = '<div class="colorBlock" id="' + randomHex +
             '" style=\"background: #' + randomHex + '\"></div>\n';
 

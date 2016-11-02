@@ -18,12 +18,11 @@ hr {
   cursor: pointer;
 }
 
-.correct {
-  background: green;
-}
-
-.incorrect {
-  background: red;
+.result {
+  text-align: center;
+  background-color: white;
+  margin: 20px auto;
+  width: 90px;
 }
 
 #messaging {
