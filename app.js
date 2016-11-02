@@ -13,7 +13,7 @@ $(document).ready(function(){
         '<div class="colorBlock" id="blue"></div>'
     );
 
-    // calls multiple functions 
+    // calls multiple functions
     $('.colorBlock').click(function(){
         appendResult(compareRandClicked(numberToColor(randomNumber(1, 4)), this));
     });
