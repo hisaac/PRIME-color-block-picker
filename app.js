@@ -24,9 +24,11 @@ $(document).ready(function(){
     // compares random color to the color selected by the user
     $('#blockContainer').on('click', '.colorBlock', function(){
         if (compareRandClicked(randomColor, this.id)) {
-            $(this).append('<p class="result">Correct</p>').hide().fadeIn();
+            $(this).append('<p class="result">Correct</p>' +
+                '<p class="result">ᕕ(ᐛ)ᕗ</p>').hide().fadeIn();
         } else {
-            $(this).append('<p class="result">Incorrect</p>').hide().fadeIn();
+            $(this).append('<p class="result">Incorrect</p>' +
+                '<p class="result">¯\\_(ツ)_/¯</p>').hide().fadeIn();
         }
     });
 
