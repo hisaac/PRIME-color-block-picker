@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 //---------------------------------- LOGIC -----------------------------------//
 
-    $('.colors').append(
+    $('#colors').append(
         '<div id="red"></div>' +
         '<div id="green"></div>' +
         '<div id="yellow"></div>' +
