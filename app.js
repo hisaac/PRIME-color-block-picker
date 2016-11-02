@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 //---------------------------------- LOGIC -----------------------------------//
 
-    append color divs to the DOM
+    // append color divs to the DOM
     $('#blockContainer').append(
         '<div class="colorBlock" id="red"></div>\n' +
         '<div class="colorBlock" id="green"></div>\n' +
